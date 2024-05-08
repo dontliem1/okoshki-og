@@ -35,7 +35,7 @@ export async function GET(request) {
                             borderRadius: 85,
                         }}
                     />}
-                    <h1 style={{ fontSize: 75, lineHeight: '85px', fontWeight: 900 }}>{title}</h1>
+                    <h1 style={{ fontSize: 75, lineHeight: '85px', fontWeight: 'bold', margin: '30px 0 15px' }}>{title}</h1>
                     {desc}
                 </div>
             ),
