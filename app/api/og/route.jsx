@@ -13,15 +13,15 @@ export async function GET(request) {
         }
 
         const fontData1 = await font1.arrayBuffer();
-        // const font2 = await fetch(
-        //     new URL('/public/Inter-Black.woff', import.meta.url),
-        // );
+        const font2 = await fetch(
+            new URL('/public/Inter-Black.woff', import.meta.url),
+        );
 
-        // if (!font2.ok) {
-        //     throw new Error("Failed to fetch the font file");
-        // }
+        if (!font2.ok) {
+            throw new Error("Failed to fetch the font file");
+        }
 
-        // const fontData2 = await font2.arrayBuffer();
+        const fontData2 = await font2.arrayBuffer();
         const { searchParams } = new URL(request.url);
 
         const title = searchParams.get('t')?.slice(0, 128);
@@ -47,6 +47,7 @@ export async function GET(request) {
                     }}
                 >
                     {path && <img
+                        alt=''
                         width="170"
                         height="170"
                         src={`https://okoshki.me/storage/app/uploads/public/${path}`}
@@ -70,12 +71,12 @@ export async function GET(request) {
                         style: 'normal',
                         weight: 400,
                     },
-                    // {
-                    //     name: 'Inter',
-                    //     data: fontData2,
-                    //     style: 'normal',
-                    //     weight: 900,
-                    // },
+                    {
+                        name: 'Inter',
+                        data: fontData2,
+                        style: 'normal',
+                        weight: 900,
+                    },
                 ],
             },
         );
