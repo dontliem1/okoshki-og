@@ -52,6 +52,8 @@ export async function GET(request) {
                         src={`https://okoshki.me/storage/app/uploads/public/${path}`}
                         style={{
                             borderRadius: 85,
+                            objectFit: 'cover',
+                            objectPosition: 'center',
                         }}
                     />}
                     <h1 style={{ fontSize: 75, lineHeight: '85px', fontWeight: 900, margin: '30px 0 15px' }}>{title}</h1>
